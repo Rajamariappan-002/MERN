@@ -1,0 +1,139 @@
+
+const express = require('express')
+3
+const bodyParser = require('body-parser')
+4
+​
+5
+const app = express()
+6
+​
+7
+​
+8
+app.use(bodyParser.urlencoded({extended:true}));
+9
+app.use(bodyParser.json())
+10
+​
+11
+app.get("/home",(req,res)=>{
+12
+    res.sendFile("C:\\Users\\Admin\\Desktop\\Sample\\client\\index.html")
+13
+})
+14
+​
+15
+app.post("/getgrades", (req,res) =>{
+16
+    var mark1 = req.body.mark1
+17
+    var mark2 = req.body.mark2
+18
+    var mark3 = req.body.mark3
+19
+    var mark4 = req.body.mark4
+20
+    var mark5 = req.body.mark5
+21
+    var rollno = req.body.rollno
+22
+​
+23
+    var gpa = (mark1*0.02) + (mark2*0.02) + (mark3*0.02) + (mark4*0.02) + (mark5*0.02)
+24
+   
+25
+    res.send(`<center><h2>Roll NO:${rollno}</h2></center><br><center><h3>gpa:${gpa}</h3></center>`)
+26
+})
+27
+​
+28
+app.listen(3005, () => {
+29
+    console.log("Server is listening1")
+30
+})
+31
+​
+32
+​
+33
+<!DOCTYPE html>
+34
+<html>
+35
+<head>
+36
+    <title>Student Grading System</title>
+37
+</head>
+38
+<body>
+39
+    <div style="width: 500px; margin: 0 auto; padding: 20px; background-color: #ffffff; border: 1px solid #000000; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+40
+        <form action="/getgrades" method="post">   
+41
+            <div style="margin-bottom: 10px;">
+42
+                <label for="rollno" style="font-weight: bold;">Enter your Roll NO</label>
+43
+                <input type="text" name="rollno" required style="width: 100%; padding: 5px; border: 1px solid #cccccc; border-radius: 3px;">
+44
+            </div>
+45
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Enter your marks</h3>
+46
+            <div style="margin-bottom: 10px;">
+47
+                <label for="mark1" style="font-weight: bold;">Marks1</label>
+48
+                <input type="text" name="mark1" required style="width: 100%; padding: 5px; border: 1px solid #cccccc; border-radius: 3px;">
+49
+            </div>
+50
+            <div style="margin-bottom: 10px;">
+51
+                <label for="mark2" style="font-weight: bold;">Marks2</label>
+52
+                <input type="text" name="mark2" required style="width: 100%; padding: 5px; border: 1px solid #cccccc; border-radius: 3px;">
+53
+            </div>
+54
+            <div style="margin-bottom: 10px;">
+55
+                <label for="mark3" style="font-weight: bold;">Marks3</label>
+56
+                <input type="text" name="mark3" required style="width: 100%; padding: 5px; border: 1px solid #cccccc; border-radius: 3px;">
+57
+            </div>
+58
+            <div style="margin-bottom: 10px;">
+59
+                <label for="mark4" style="font-weight: bold;">Marks4</label>
+60
+                <input type="text" name="mark4" required style="width: 100%; padding: 5px; border: 1px solid #cccccc; border-radius: 3px;">
+61
+            </div>
+62
+            <div style="margin-bottom: 10px;">
+63
+                <label for="mark5" style="font-weight: bold;">Marks5</label>
+64
+                <input type="text" name="mark5" required style="width: 100%; padding: 5px; border: 1px solid #cccccc; border-radius: 3px;">
+65
+            </div>
+66
+            <input type="submit" value="Submit" style="padding: 10px 20px; background-color: #4CAF50; color: #ffffff; border: none; border-radius: 3px; cursor: pointer; font-size: 16px;">
+67
+        </form>
+68
+    </div>
+69
+</body>
+70
+</html>
+

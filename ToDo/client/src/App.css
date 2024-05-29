@@ -1,0 +1,116 @@
+
+
+.todo{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.add-activity{
+  width:600px;
+  height: 4rem;
+  background-color: #006769;
+  padding:8px;
+  border-radius: 8px;
+}
+
+.add-activity input{
+  width: 100%;
+  height: 3rem;
+  font-size:20px;
+  background-color: #E6FF94;
+  padding:8px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid black;
+}
+
+.addbutton{
+  margin-left: 20px;
+  width: 100px;
+  height: 3rem;
+  margin-top: 7px;
+  border-radius: 8px;
+  background-color: #9DDE8B;
+  border: 1px solid black;
+}
+
+.addbutton:hover{
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+}
+
+#task{
+  display:flex;
+  justify-content: center;
+}
+
+#task .taskcontainer{
+  display: flex;
+  height:auto;
+  margin-top: 50px;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  align-items: center;
+  
+}
+
+
+#task .taskcontainer .items{
+  display:flex;
+  border-radius: 8px;
+  width: 500px;
+  height: 3rem;
+  text-align: center;
+  list-style-type:none;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 0.5s;
+  border:1px solid black;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#task .taskcontainer .items:hover{
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+#statuscontainer .delete{
+  width:20px;
+  height:20px;
+}
+
+
+#statuscontainer .complete{
+  width:20px;
+  height:20px;
+  margin-right:10px
+}
+
+
+#statuscontainer .complete:hover{
+  box-shadow: 0px 0px 8px rgba(189, 23, 117, 0.2);
+}
+
+#statuscontainer .delete:hover{
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+}
+
+
+
+.completedActivities .items{
+  display:flex;
+  border-radius: 8px;
+  width: 500px;
+  height: 3rem;
+  text-align: center;
+  list-style-type:none;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 0.5s;
+  border:1px solid black;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
