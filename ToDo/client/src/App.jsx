@@ -10,6 +10,7 @@ const App = () => {
   const [activities,setactivities] = useState([])
   const [completedactivities, setcompletedactivities] = useState([])
   const [filteredactivities, setfilteredactivites] = useState([])
+  const [toggle, settoggle] = useState(false)
   
 
   const addactivity = () =>{
@@ -36,6 +37,10 @@ const App = () => {
     setfilteredactivites(activities.filter(activity=>activity == filteractivity))
   }
 
+  const Toggle = () => {
+    settoggle(!toggle)
+  }
+
 
   return (
     <>
@@ -51,9 +56,7 @@ const App = () => {
     {activities.map((value,index)=>(
        <li key={index} className='items' >{value}
         <div id='statuscontainer'>
-          <img src='./assets/check.png' className='complete' onClick={(e) =>{
-          
-            addcompletedactivities(e,value)
+          <img src='./assets/check.png' className='complete' onClick={(e) =>{addcompletedactivities(e,value)
             }}/>
           <img src='./assets/bin.png' className='delete' onClick={(e)=>{DelActivity(value)}}/>   
       </div>
@@ -63,18 +66,30 @@ const App = () => {
  
   </div>
 
-  <div id='filter'>
-    <input type='text' value={filteractivity} onChange={(e)=>{setfilteractivity(e.target.value)}}/>
-    <button onClick={(e)=>{filtertask(filteractivity)}}>Filter</button>
+    <div className='filter-container'>
+      <div className='filter'>
+        <input type='text' value={filteractivity} placeholder='Enter an activity To filter' onChange={(e)=>{setfilteractivity(e.target.value)}}/>
+         <button onClick={(e)=>{filtertask(filteractivity)}}>Filter</button>
 
-    {
-      filteredactivities.map((value,index)=>{
-        return <li key={index}>{value}</li>
-      })
-    }
+          {
+            filteredactivities.map((value,index)=>{
+               return <li key={index} className='items'>{value}</li>
+            })
+          }
+   </div>
   </div>
 
-
+  <div className='displaytasks'>
+    <button onClick={Toggle}>Show completed Tasks</button>
+    <div>
+    {
+       toggle && completedactivities.map((value,index)=>{
+            return <li key={index} className='items'>{value}</li>
+         })
+    }
+    </div>
+   
+  </div>
   </>
   )
 }

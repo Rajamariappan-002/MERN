@@ -16,7 +16,7 @@
     padding:20px;
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 0px 0px 8px rgba(0, 0, blue, alpha);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0 ,0.2);
 }
 
 .book-div .main-div .book-holder{
@@ -45,7 +45,7 @@
     transform: scale(1.01);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.50s;
-    border:1px solid black;
+
 }
 
 
@@ -58,12 +58,12 @@
 .book-div .main-div .book-holder div .cart{
     width:100px;
     padding: 8px;
-    border-radius: 8px;
-    background-color: #2A629A;
+    background-color: yellow;
+    border-radius: 1px;
 }
 
 
 .book-div .main-div .book-holder div .cart:hover{
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-    color:white;
+ 
 }

@@ -71,7 +71,7 @@ const App = () => {
 
       {
         searchList.map((value, index)=>{
-          return <li key={index}>Name:{value.name} Age:{value.age} Department:{value.department}</li>
+          return <li key={index}>Name: {value.name} Age: {value.age} Department: {value.department}</li>
         })
       }
       </div>

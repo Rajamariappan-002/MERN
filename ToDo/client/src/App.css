@@ -113,4 +113,64 @@
   align-items: center;
 }
 
+.filter-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:auto;
+  height: auto;
+  margin-top: 50px;
+}
+.filter input{
+  padding:10px;
+}
+
+.filter button{
+  margin-left: 10px;
+  padding:10px;
+}
+.filter .items{
+  display:flex;
+  margin-top:10px;
+  width: 500px;
+  height: 3rem;
+  text-align: center;
+  list-style-type:none;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 0.5s;
+  border:1px solid black;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.displaytasks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:auto;
+  height:auto;
+  flex-direction: column;
+}
+
+.displaytasks button{
+  width: 200px;
+  margin-top: 10px;
+  padding:10px;
+}
+
+.displaytasks .items{
+  display:flex;
+  margin-top:10px;
+  width: 500px;
+  height: 3rem;
+  text-align: center;
+  list-style-type:none;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 0.5s;
+  border:1px solid black;
+  justify-content: space-around;
+  align-items: center;
+}
 
