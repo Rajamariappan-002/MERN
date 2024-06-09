@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const userModel = require('./Model/UserModel')
 const AdminModel = require('./Model/AdminModel')
 const RoomModel = require('./Model/RoomModel')
+const BookingModel = require('./Model/BookingModel');
 const cors = require('cors')
 
 const app = express()
@@ -78,6 +79,19 @@ app.get("/viewrooms", async (req,res)=>{
         console.log(e)
     }
 })
+
+app.post("/bookroom", async (req,res)=>{
+    try{
+        const newBooking = new BookingModel(req.body)
+        await newBooking.save()
+        res.json({message:"Booking Done"})
+      
+    }catch(e){
+        console.log(e)
+    }
+})
+
+
 
 app.listen(3001,()=>{
     console.log("Server is running")

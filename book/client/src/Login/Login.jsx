@@ -2,6 +2,7 @@ import React, { useState, } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import './Login.css'
 
 
 
@@ -28,16 +29,18 @@ const Login = () => {
     }
 
   return (
-    <div>
-        <h3>Login</h3>
+    <div className='main'>
+    <div className='userlogin'>
+        <h3>User Login</h3>
         <form onSubmit={handlelogin}>
             <input type='email' placeholder='Enter Your Email' value={email} onChange={(e)=>setemail(e.target.value)} required/>
             <input type='password' placeholder='Enter Your Password' value={password} onChange={(e)=>setpassword(e.target.value)} required/>
             <button type='submit'>Login</button>
         </form>
 
-        <Link to='/register'>Register Now</Link>
+        <div>Don't have an account?   <Link to='/register' className='registerlink'>Register Now</Link></div>
         <Link to='/adminlogin'>Admin Login</Link>
+    </div>
     </div>
   )
 }
